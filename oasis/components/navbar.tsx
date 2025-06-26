@@ -2,6 +2,7 @@
 import React, { useState } from "react";
 import { HoveredLink, Menu, MenuItem, ProductItem } from "@/components/ui/navbar-menu";
 import { cn } from "@/lib/utils";
+import Link from "next/link";
 
 export function NavbarDemo() {
   return (
@@ -18,16 +19,19 @@ function Navbar({ className }: { className?: string }) {
       className={cn("fixed top-10 inset-x-0 max-w-2xl mx-auto z-50", className)}
     >
       <Menu setActive={setActive}>
-        <MenuItem setActive={setActive} active={active} item="Services">
+        <Link href="/" className="underline-animation text-lg text-black hover:opacity-[0.9] dark:text-white hover:text-orange-500 rounded-lg w-32 text-center duration-300">
+          Home
+        </Link>
+        <MenuItem setActive={setActive} active={active} item="Purchase">
           <div className="flex flex-col space-y-4 text-sm">
-            <HoveredLink href="/web-dev">Web Development</HoveredLink>
-            <HoveredLink href="/interface-design">Interface Design</HoveredLink>
-            <HoveredLink href="/seo">Search Engine Optimization</HoveredLink>
-            <HoveredLink href="/branding">Branding</HoveredLink>
+            <HoveredLink href="/hobby">Lite</HoveredLink>
+            <HoveredLink href="/individual" className="hover:text-yellow-400">Pro</HoveredLink>
+            <HoveredLink href="/team">Business</HoveredLink>
+            <HoveredLink href="/enterprise">Business Plus</HoveredLink>
           </div>
         </MenuItem>
         <MenuItem setActive={setActive} active={active} item="Add Ons">
-          <div className="  text-sm grid grid-cols-2 gap-10 p-4">
+          <div className=" grid lg:grid-cols-3 md:grid-cols-2 grid-cols-1 gap-10 p-4 lg:text-5 md:text-lg text-sm">
             <ProductItem
               title="Algochurn"
               href="https://algochurn.com"
@@ -52,22 +56,22 @@ function Navbar({ className }: { className?: string }) {
               src="https://assets.aceternity.com/demos/Screenshot+2024-02-21+at+11.47.07%E2%80%AFPM.png"
               description="Respond to government RFPs, RFIs and RFQs 10x faster using AI"
             />
-            <ProductItem
-              title="Rogue"
-              href="https://userogue.com"
-              src="https://assets.aceternity.com/demos/Screenshot+2024-02-21+at+11.47.07%E2%80%AFPM.png"
-              description="Respond to government RFPs, RFIs and RFQs 10x faster using AI"
-            />
+            <div className="col-span-full">
+              <ProductItem
+                title="More Products"
+                href="https://userogue.com"
+                src="https://assets.aceternity.com/demos/Screenshot+2024-02-21+at+11.47.07%E2%80%AFPM.png"
+                description="More products coming soon"
+              />
+            </div>
           </div>
         </MenuItem>
-        <MenuItem setActive={setActive} active={active} item="Purchase">
-          <div className="flex flex-col space-y-4 text-sm">
-            <HoveredLink href="/hobby">Lite</HoveredLink>
-            <HoveredLink href="/individual">Pro</HoveredLink>
-            <HoveredLink href="/team">Business</HoveredLink>
-            <HoveredLink href="/enterprise">Business Plus</HoveredLink>
-          </div>
-        </MenuItem>
+        <Link href="/" className="underline-animation text-lg text-black hover:opacity-[0.9] dark:text-white hover:text-orange-500 rounded-lg w-32 text-center duration-300">
+          The Blog
+        </Link>
+        <Link href="/" className="underline-animation text-lg text-black hover:opacity-[0.9] dark:text-white hover:text-orange-500 rounded-lg w-32 text-center duration-300">
+          Support
+        </Link>
       </Menu>
     </div>
   );

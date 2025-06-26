@@ -5,7 +5,7 @@ import { motion } from "motion/react";
 
 
 const transition = {
-  type: "spring",
+  type: "spring" as const,
   mass: 0.5,
   damping: 11.5,
   stiffness: 100,
@@ -28,7 +28,10 @@ export const MenuItem = ({
     <div onMouseEnter={() => setActive(item)} className="relative ">
       <motion.p
         transition={{ duration: 0.3 }}
-        className="cursor-pointer text-black hover:opacity-[0.9] dark:text-white"
+        className={
+          `cursor-pointer text-lg text-black dark:text-white rounded-lg w-32 text-center duration-300 underline-animation hover:text-orange-500
+          ${active === item ? "text-orange-500 underline-animation-active" : ""}`
+        }
       >
         {item}
       </motion.p>
@@ -39,7 +42,7 @@ export const MenuItem = ({
           transition={transition}
         >
           {active === item && (
-            <div className="absolute top-[calc(100%_+_1.2rem)] left-1/2 transform -translate-x-1/2 pt-4">
+            <div className="absolute top-[calc(100%_+_0.8rem)] left-1/2 transform -translate-x-1/2 pt-2">
               <motion.div
                 transition={transition}
                 layoutId="active" // layoutId ensures smooth animation
@@ -70,7 +73,7 @@ export const Menu = ({
   return (
     <nav
       onMouseLeave={() => setActive(null)} // resets the state
-      className="relative rounded-full border border-transparent dark:bg-black dark:border-white/[0.2] bg-white shadow-input flex justify-center space-x-4 px-8 py-6 "
+      className="relative rounded-xl border border-transparent bg-[#656565] dark:bg-black dark:border-white/[0.2] shadow-input flex justify-center space-x-4 px-8 py-3"
     >
       {children}
     </nav>
@@ -113,7 +116,7 @@ export const HoveredLink = ({ children, ...rest }: any) => {
   return (
     <a
       {...rest}
-      className="text-neutral-700 dark:text-neutral-200 hover:text-black "
+      className="text-neutral-700 dark:text-neutral-200 hover:text-orange-400 hover:bg-orange-500/10 rounded-lg w-32 text-center duration-300"
     >
       {children}
     </a>
