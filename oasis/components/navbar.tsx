@@ -3,11 +3,13 @@ import React, { useState } from "react";
 import { HoveredLink, Menu, MenuItem, ProductItem } from "@/components/ui/navbar-menu";
 import { cn } from "@/lib/utils";
 import Link from "next/link";
+import Image from "next/image";
+import { Button } from "./ui/button";
 
 export function NavbarDemo() {
   return (
     <div className="relative w-full flex items-center justify-center">
-      <Navbar className="top-2" />
+      <Navbar className="top-2 border-transparent" />
     </div>
   );
 }
@@ -16,16 +18,25 @@ function Navbar({ className }: { className?: string }) {
   const [active, setActive] = useState<string | null>(null);
   return (
     <div
-      className={cn("fixed top-10 inset-x-0 max-w-2xl mx-auto z-50", className)}
+      className={cn("fixed top-10 inset-x-0 max-w-3xl mx-auto z-50", className)}
     >
       <Menu setActive={setActive}>
-        <Link href="/" className="underline-animation text-lg text-black hover:opacity-[0.9] dark:text-white hover:text-orange-500 rounded-lg w-32 text-center duration-300">
+        <div className="flex items-center justify-center bg-white rounded-lg p-1 w-12.5 h-9 left-10">
+          <Image 
+            src="/logo.svg" 
+            alt="Oasis Workflow" 
+            width={24} 
+            height={24} 
+            className="w-8 h-6 filter text-black"
+          />
+        </div>
+        <Link href="/" className="underline-animation navbar-links rounded-lg w-32 text-center duration-300 font-saira">
           Home
         </Link>
         <MenuItem setActive={setActive} active={active} item="Purchase">
-          <div className="flex flex-col space-y-4 text-sm">
+          <div className="flex flex-col space-y-2 text-sm">
             <HoveredLink href="/hobby">Lite</HoveredLink>
-            <HoveredLink href="/individual" className="hover:text-yellow-400">Pro</HoveredLink>
+            <HoveredLink href="/individual">Pro</HoveredLink>
             <HoveredLink href="/team">Business</HoveredLink>
             <HoveredLink href="/enterprise">Business Plus</HoveredLink>
           </div>
@@ -56,7 +67,7 @@ function Navbar({ className }: { className?: string }) {
               src="https://assets.aceternity.com/demos/Screenshot+2024-02-21+at+11.47.07%E2%80%AFPM.png"
               description="Respond to government RFPs, RFIs and RFQs 10x faster using AI"
             />
-            <div className="col-span-full">
+            <div className="col-span-full text-center items-center justify-center border-2 border-white/[0.2] rounded-lg">
               <ProductItem
                 title="More Products"
                 href="https://userogue.com"
@@ -66,12 +77,15 @@ function Navbar({ className }: { className?: string }) {
             </div>
           </div>
         </MenuItem>
-        <Link href="/" className="underline-animation text-lg text-black hover:opacity-[0.9] dark:text-white hover:text-orange-500 rounded-lg w-32 text-center duration-300">
+        <Link href="/" className="underline-animation navbar-links rounded-lg w-32 text-center duration-300 font-saira">
           The Blog
         </Link>
-        <Link href="/" className="underline-animation text-lg text-black hover:opacity-[0.9] dark:text-white hover:text-orange-500 rounded-lg w-32 text-center duration-300">
-          Support
+        <Link href="/" className="underline-animation navbar-links rounded-lg w-32 text-center duration-300 font-saira">
+         Support
         </Link>
+        <button className="bg-white text-black rounded-lg w-32 text-center duration-300 font-saira text-lg">
+          Login
+        </button>
       </Menu>
     </div>
   );

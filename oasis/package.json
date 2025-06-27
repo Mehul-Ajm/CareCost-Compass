@@ -13,6 +13,10 @@
     "@heroui/react": "^2.7.11",
     "@heroui/system": "^2.4.18",
     "@heroui/theme": "^2.4.17",
+    "@radix-ui/react-slot": "^1.2.3",
+    "@tsparticles/engine": "^3.8.1",
+    "@tsparticles/react": "^3.0.0",
+    "@tsparticles/slim": "^3.8.1",
     "class-variance-authority": "^0.7.1",
     "clsx": "^2.1.1",
     "framer-motion": "^12.19.1",
@@ -32,6 +36,7 @@
     "eslint": "^9",
     "eslint-config-next": "15.3.4",
     "tailwindcss": "^4",
+    "tailwindcss-motion": "^1.1.1",
     "tw-animate-css": "^1.3.4",
     "typescript": "^5"
   }

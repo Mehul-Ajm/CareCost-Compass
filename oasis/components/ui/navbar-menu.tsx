@@ -25,12 +25,12 @@ export const MenuItem = ({
   children?: React.ReactNode;
 }) => {
   return (
-    <div onMouseEnter={() => setActive(item)} className="relative ">
+    <div onMouseEnter={() => setActive(item)} className="relative">
       <motion.p
         transition={{ duration: 0.3 }}
         className={
-          `cursor-pointer text-lg text-black dark:text-white rounded-lg w-32 text-center duration-300 underline-animation hover:text-orange-500
-          ${active === item ? "text-orange-500 underline-animation-active" : ""}`
+          `cursor-pointer text-lg text-white dark:text-white rounded-lg w-32 text-center duration-300 underline-animation hover:text-white font-saira
+          ${active === item ? "underline-animation-active" : ""}`
         }
       >
         {item}
@@ -42,16 +42,13 @@ export const MenuItem = ({
           transition={transition}
         >
           {active === item && (
-            <div className="absolute top-[calc(100%_+_0.8rem)] left-1/2 transform -translate-x-1/2 pt-2">
+            <div className="absolute top-[calc(100%_+_0.8rem)] left-1/2 transform -translate-x-1/2">
               <motion.div
                 transition={transition}
-                layoutId="active" // layoutId ensures smooth animation
-                className="bg-white dark:bg-black backdrop-blur-sm rounded-2xl overflow-hidden border border-black/[0.2] dark:border-white/[0.2] shadow-xl"
+                layoutId="active"
+                className="relative bg-black  dark:bg-black dark:border-white/[0.2] rounded-2xl overflow-hidden border border-black/20 px-2 py-2"
               >
-                <motion.div
-                  layout // layout ensures smooth animation
-                  className="w-max h-full p-4"
-                >
+                <motion.div layout className="w-max h-full p-2">
                   {children}
                 </motion.div>
               </motion.div>
@@ -73,7 +70,7 @@ export const Menu = ({
   return (
     <nav
       onMouseLeave={() => setActive(null)} // resets the state
-      className="relative rounded-xl border border-transparent bg-[#656565] dark:bg-black dark:border-white/[0.2] shadow-input flex justify-center space-x-4 px-8 py-3"
+      className="relative rounded-xl border border-3px bg-black border-transparent shadow-input flex justify-center space-x-4 px-2 py-2"
     >
       {children}
     </nav>
@@ -92,7 +89,7 @@ export const ProductItem = ({
   src: string;
 }) => {
   return (
-    <a href={href} className="flex space-x-2">
+    <a href={href} className="flex space-x-5 gap-4  rounded-lg">
       <img
         src={src}
         width={140}
@@ -100,8 +97,8 @@ export const ProductItem = ({
         alt={title}
         className="shrink-0 rounded-md shadow-2xl"
       />
-      <div>
-        <h4 className="text-xl font-bold mb-1 text-black dark:text-white">
+      <div className="flex flex-col items-center justify-center rounded-lg">
+        <h4 className="text-xl font-bold mb-1 text-white dark:text-white">
           {title}
         </h4>
         <p className="text-neutral-700 text-sm max-w-[10rem] dark:text-neutral-300">
@@ -116,7 +113,7 @@ export const HoveredLink = ({ children, ...rest }: any) => {
   return (
     <a
       {...rest}
-      className="text-neutral-700 dark:text-neutral-200 hover:text-orange-400 hover:bg-orange-500/10 rounded-lg w-32 text-center duration-300"
+      className="text-neutral-300 dark:text-neutral-200 hover:bg-purple-400/70 rounded-lg w-32 text-center duration-300"
     >
       {children}
     </a>
