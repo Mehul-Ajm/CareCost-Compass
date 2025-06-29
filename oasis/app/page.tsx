@@ -6,14 +6,24 @@ import { AuroraBackground } from "@/components/ui/aurora-background";
 import { SparklesCore } from "@/components/ui/sparkles";
 
 export default function HomePage() {
-  return <AuroraBackgroundDemo />;
+  return <SparklesCorePreview />;
 }
 
-export function AuroraBackgroundDemo() {
-  return (
-    <AuroraBackground intensity="high" showParticles={true}>
-    
-    <motion.div
+export function SparklesCorePreview() {
+    return (
+    <div className="h-[100vh] relative w-full bg-black flex flex-col items-center justify-center overflow-hidden rounded-md">
+      <div className="w-full absolute inset-0 h-screen">
+        <SparklesCore
+          id="tsparticlesfullpage"
+          background="transparent"
+          minSize={0.6}
+          maxSize={1.4}
+          particleDensity={100}
+          className="w-full h-full"
+          particleColor="#FFFFFF"
+        />
+      </div>
+      <motion.div
         initial={{ opacity: 0.0, y: 40 }}
         whileInView={{ opacity: 1, y: 0 }}
         transition={{
@@ -23,18 +33,16 @@ export function AuroraBackgroundDemo() {
         }}
         className="relative flex flex-col gap-4 items-center justify-center px-4"
       >
-        <div className="text-3xl md:text-7xl font-bold dark:text-white text-center">
+        <div className="text-3xl md:text-7xl font-bold dark:text-white text-center text-white">
           Oasis Workflow
         </div>
-        <div className="font-extralight text-base md:text-4xl dark:text-neutral-200 py-4">
-          Your digital sanctuary awaits
+        <div className="font-extralight text-base md:text-4xl dark:text-neutral-200 py-4 text-white">
+          Workflows Made Easy
         </div>
-        <button className="bg-black dark:bg-white rounded-xl w-fit text-white dark:text-black px-4 py-2">
+        <button className="bg-white dark:bg-white rounded-xl w-fit text-black dark:text-black px-4 py-2 hover:bg-white hover:scale-110 transition-all duration-300 cursor-pointer">
           View Subscriptions
         </button>
       </motion.div>
-
-
-    </AuroraBackground>
+    </div>
   );
 }

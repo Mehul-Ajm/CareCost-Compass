@@ -30,7 +30,7 @@ function Navbar({ className }: { className?: string }) {
             className="w-8 h-6 filter text-black"
           />
         </div>
-        <Link href="/" className="underline-animation navbar-links rounded-lg w-32 text-center duration-300 font-saira">
+        <Link href="/" className="underline-animation navbar-links rounded-lg w-32 h-9 text-center duration-300 font-saira flex justify-center items-center">
           Home
         </Link>
         <MenuItem setActive={setActive} active={active} item="Purchase">
@@ -77,15 +77,15 @@ function Navbar({ className }: { className?: string }) {
             </div>
           </div>
         </MenuItem>
-        <Link href="/" className="underline-animation navbar-links rounded-lg w-32 text-center duration-300 font-saira">
+        <Link href="/blog" className="underline-animation navbar-links rounded-lg w-32 h-9 text-center duration-300 font-saira flex justify-center items-center">
           The Blog
         </Link>
-        <Link href="/" className="underline-animation navbar-links rounded-lg w-32 text-center duration-300 font-saira">
+        <Link href="/support" className="underline-animation navbar-links rounded-lg w-32 h-9 text-center duration-300 font-saira flex justify-center items-center">
          Support
         </Link>
-        <button className="bg-white text-black rounded-lg w-32 text-center duration-300 font-saira text-lg">
+        <Link href="/login" className="bg-white text-black rounded-lg w-32 h-9 text-center duration-300 font-saira text-lg flex justify-center items-center">
           Login
-        </button>
+        </Link>
       </Menu>
     </div>
   );

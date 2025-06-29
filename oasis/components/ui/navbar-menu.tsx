@@ -29,7 +29,7 @@ export const MenuItem = ({
       <motion.p
         transition={{ duration: 0.3 }}
         className={
-          `cursor-pointer text-lg text-white dark:text-white rounded-lg w-32 text-center duration-300 underline-animation hover:text-white font-saira
+          `cursor-pointer navbar-links rounded-lg w-32 h-9 text-center duration-300 underline-animation font-saira flex justify-center items-center
           ${active === item ? "underline-animation-active" : ""}`
         }
       >
@@ -46,7 +46,7 @@ export const MenuItem = ({
               <motion.div
                 transition={transition}
                 layoutId="active"
-                className="relative bg-black  dark:bg-black dark:border-white/[0.2] rounded-2xl overflow-hidden border border-black/20 px-2 py-2"
+                className="relative bg-black  dark:bg-black dark:border-white/[0.2] rounded-2xl overflow-hidden border border-black/20 shadow-md shadow-white/40"
               >
                 <motion.div layout className="w-max h-full p-2">
                   {children}
@@ -70,7 +70,7 @@ export const Menu = ({
   return (
     <nav
       onMouseLeave={() => setActive(null)} // resets the state
-      className="relative rounded-xl border border-3px bg-black border-transparent shadow-input flex justify-center space-x-4 px-2 py-2"
+      className="relative rounded-xl bg-black border border-white/20 shadow-md shadow-white/40 flex justify-center space-x-4 px-2 py-3 items-center"
     >
       {children}
     </nav>
@@ -113,7 +113,7 @@ export const HoveredLink = ({ children, ...rest }: any) => {
   return (
     <a
       {...rest}
-      className="text-neutral-300 dark:text-neutral-200 hover:bg-purple-400/70 rounded-lg w-32 text-center duration-300"
+      className="text-neutral-300 dark:text-neutral-200 hover:bg-white hover:text-black rounded-lg w-32 text-center duration-300"
     >
       {children}
     </a>
