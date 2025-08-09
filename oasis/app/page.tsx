@@ -34,14 +34,14 @@ export function SparklesCorePreview() {
         className="relative flex flex-col gap-4 items-center justify-center px-4"
       >
         <div className="text-3xl md:text-7xl font-bold dark:text-white text-center text-white">
-          Oasis Workflow
+          Clear Trials
         </div>
         <div className="font-extralight text-base md:text-4xl dark:text-neutral-200 py-4 text-white">
-          Workflows Made Easy
+          Trials Made Easy
         </div>
-        <button className="bg-white dark:bg-white rounded-xl w-fit text-black dark:text-black px-4 py-2 hover:bg-white hover:scale-110 transition-all duration-300 cursor-pointer">
-          View Subscriptions
-        </button>
+        <a href="/ai" className="bg-white dark:bg-white rounded-xl w-fit text-black dark:text-black px-4 py-2 hover:bg-white hover:scale-110 transition-all duration-300 cursor-pointer">
+          Get Started
+        </a>
       </motion.div>
     </div>
   );
