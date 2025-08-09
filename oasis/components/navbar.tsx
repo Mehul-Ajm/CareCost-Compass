@@ -42,6 +42,9 @@ function Navbar({ className }: { className?: string }) {
         <Link href="/login" className="bg-white text-black rounded-lg w-32 h-9 text-center duration-300 font-saira text-lg flex justify-center items-center">
           Login
         </Link>
+        <Link href="/signup" className="bg-white text-black rounded-lg w-32 h-9 text-center duration-300 font-saira text-lg flex justify-center items-center">
+          Sign Up
+        </Link>
       </Menu>
     </div>
   );
