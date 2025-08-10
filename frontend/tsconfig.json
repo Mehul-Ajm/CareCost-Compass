@@ -1,7 +1,11 @@
 {
   "compilerOptions": {
     "target": "ES2017",
-    "lib": ["dom", "dom.iterable", "esnext"],
+    "lib": [
+      "dom",
+      "dom.iterable",
+      "esnext"
+    ],
     "allowJs": true,
     "skipLibCheck": true,
     "strict": true,
@@ -19,11 +23,25 @@
       }
     ],
     "paths": {
-      "@/*": ["../../frontendClearTrial/frontend/src/*"],
-      "@/components/*": ["../../frontendClearTrial/frontend/src/components/*"],
-      "@/lib/*": ["../../frontendClearTrial/frontend/src/lib/*"]
+      "@/*": [
+        "src/*"
+      ],
+      "@/components/*": [
+        "src/components/*"
+      ],
+      "@/lib/*": [
+        "src/lib/*"
+      ]
     }
   },
-  "include": ["../../frontendClearTrial/frontend/next-env.d.ts", "../../frontendClearTrial/frontend/**/*.ts", "../../frontendClearTrial/frontend/**/*.tsx", "../../frontendClearTrial/frontend/.next/types/**/*.ts"],
-  "exclude": ["../../frontendClearTrial/frontend/node_modules"]
+  "include": [
+    "../../frontendClearTrial/frontend/**/*.ts",
+    "../../frontendClearTrial/frontend/**/*.tsx",
+    "../../frontendClearTrial/frontend/.next/types/**/*.ts",
+    "../../frontendClearTrial/frontend/next-env.d.ts",
+    ".next/types/**/*.ts"
+  ],
+  "exclude": [
+    "../../frontendClearTrial/frontend/node_modules"
+  ]
 }
