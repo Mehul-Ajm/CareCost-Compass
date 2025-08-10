@@ -65,7 +65,8 @@ The backend is a Python Flask application structured for scalability and maintai
 - **Build Tools:** Bun (package manager), ESLint, TSConfig
 - **Structure:**
   - `src/app/`: App pages and layouts
-  - `src/components/`: UI and analysis components
+  - `src/components/`: UI and analysis components (includes interactive cost distribution pie chart)
   - `src/lib/`: Utilities and shared logic
 
-The frontend is a modern Next.js (React) application using TypeScript, modular CSS, and custom components, consuming backend APIs for dynamic data and analysis.
+
+The frontend is a modern Next.js (React) application using TypeScript, modular CSS, and custom components, consuming backend APIs for dynamic data and analysis. The analysis view features an interactive pie chart that visualizes the real cost distribution for chemo, radiation, and surgery using actual backend data.
