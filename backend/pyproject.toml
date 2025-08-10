@@ -1,0 +1,14 @@
+[project]
+name = "hack4hope-backend"
+version = "0.1.0"
+dependencies = [
+  "flask",
+  "flask-cors",
+  "pydantic",
+  "openai",
+  "httpx",
+  "python-dotenv",
+]
+requires-python = ">=3.12"
+
+
