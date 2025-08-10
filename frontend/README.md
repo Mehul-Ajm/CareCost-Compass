@@ -27,6 +27,21 @@ Open [http://localhost:3000](http://localhost:3000) with your browser to see the
 
 You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
 
+
+## Features
+
+- State selection and cost estimate for chemo, radiation, and surgery
+- Detailed analysis view with:
+  - Cost trend chart (demo)
+  - Fun fact for the selected state
+  - Visual breakdown of treatment costs
+  - Key takeaways, summary, and trusted sources
+
+
+## New: Cost Trend & Fun Fact
+
+The analysis view now features a cost trend chart (demo) and a fun fact about the selected state, making the UI more visually engaging and informative.
+
 This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
 
 ## Learn More
